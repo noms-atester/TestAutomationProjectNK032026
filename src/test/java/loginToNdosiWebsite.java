@@ -19,6 +19,7 @@ public class loginToNdosiWebsite {
     public void logintondosiwebsite(){
         driver.get("https://ndosisimplifiedautomation.vercel.app/");
         driver.manage().window().maximize();
+
         driver.findElement(By.xpath("( (//*[contains(normalize-space(text()), 'Login')])[1] )")).click();
         driver.findElement(By.id("login-email")).sendKeys("nktests@gmail.com");
         driver.findElement(By.id("login-password")).sendKeys("drows$ap");
@@ -29,7 +30,7 @@ public class loginToNdosiWebsite {
         );
 
         String dashboardText = welcomeMessage.getText();
-        //System.out.print(dashboardText + "\n\n");
+        System.out.print(dashboardText + "\n\n");
         //Assert.assertEquals(welcomeText, "Welcome back, Noms! \uD83D\uDC4B\n");
         String welcomeSubstring = "Welcome back, Noms!";
 
@@ -44,7 +45,7 @@ public class loginToNdosiWebsite {
         // Pattern: "Welcome back, " followed by any user's name until "!"
         Assert.assertTrue(welcomeWithNoEmoji.matches("Welcome back, .*!"));
 
-
+        // Web Automation Basic Form
         driver.findElement(By.xpath("( (//span[contains(normalize-space(text()), 'Learn')])[1] )")).click();
         driver.findElement(By.xpath("( (//*[contains(normalize-space(text()), 'Learning Materials')])[1] )")).click();
         driver.findElement(By.xpath("( (//*[contains(normalize-space(text()), 'Web Automation Basic Form')])[1] )")).click();
